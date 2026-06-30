@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import { Activity, BarChart3, BriefcaseBusiness, Building2, CircleAlert, CircleCheck, Compass, GraduationCap, Headset, MessageSquare, Mic, School, UsersRound } from 'lucide-react';
 
 const OfficeRoom3D = lazy(() => import('./OfficeRoom3D.jsx'));
 
@@ -12,22 +13,22 @@ function RoomFallback() {
 }
 
 const productCards = [
-  ['01', 'VR interview practice', 'Realistic interview environments create controlled pressure before real interviews.', 'text-brandBlue'],
-  ['02', 'Voice-to-voice AI', 'Adaptive follow-up questions respond to user answers through natural spoken practice.', 'text-brandTeal'],
-  ['03', 'Measured feedback', 'Feedback covers answer quality, speech delivery, confidence, communication, and readiness.', 'text-brandBlue'],
-  ['04', 'RIASEC guidance', 'Early pathway guidance helps school students explore academic and career direction.', 'text-brandOrange'],
+  ['01', Headset, 'VR interview practice', 'Realistic interview environments create controlled pressure before real interviews.', 'text-brandBlue'],
+  ['02', Mic, 'Voice-to-voice AI', 'Adaptive follow-up questions respond to user answers through natural spoken practice.', 'text-brandTeal'],
+  ['03', BarChart3, 'Measured feedback', 'Feedback covers answer quality, speech delivery, confidence, communication, and readiness.', 'text-brandBlue'],
+  ['04', Compass, 'RIASEC guidance', 'Early pathway guidance helps school students explore academic and career direction.', 'text-brandOrange'],
 ];
 
 const segments = [
-  ['Primary', 'Students & job seekers', 'University students, fresh graduates, job seekers, and career changers preparing for interviews.', 'bg-blue-50 text-brandBlue'],
-  ['Institutional', 'Schools & training providers', 'Universities, colleges, bootcamps, training centers, career services, and K-12 school networks.', 'bg-emerald-50 text-brandTeal'],
+  ['Primary', UsersRound, 'Students & job seekers', 'University students, fresh graduates, job seekers, and career changers preparing for interviews.', 'bg-blue-50 text-brandBlue'],
+  ['Institutional', Building2, 'Schools & training providers', 'Universities, colleges, bootcamps, training centers, career services, and K-12 school networks.', 'bg-emerald-50 text-brandTeal'],
 ];
 
 const lifecycle = [
-  ['School', 'Pathway choice'],
-  ['University', 'Major exploration'],
-  ['Interview', 'Practice and feedback'],
-  ['Workplace', 'Pressure simulation'],
+  ['School', School, 'Pathway choice'],
+  ['University', GraduationCap, 'Major exploration'],
+  ['Interview', MessageSquare, 'Practice and feedback'],
+  ['Workplace', Activity, 'Pressure simulation'],
 ];
 
 function Header() {
@@ -104,9 +105,12 @@ function Product() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          {productCards.map(([num, title, text, color]) => (
+          {productCards.map(([num, Icon, title, text, color]) => (
             <article key={num} className="rounded-[1rem] border border-black/10 bg-white p-4 sm:rounded-[1.5rem] sm:p-6">
-              <p className={`mb-4 text-xs sm:mb-10 sm:text-sm ${color}`}>{num}</p>
+              <div className="mb-4 flex items-center justify-between sm:mb-10">
+                <p className={`text-xs sm:text-sm ${color}`}>{num}</p>
+                <Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${color}`} aria-hidden="true" />
+              </div>
               <h3 className="text-base font-medium tracking-tight sm:text-2xl">{title}</h3>
               <p className="mt-3 text-xs leading-relaxed text-ink/60 sm:mt-4 sm:text-base">{text}</p>
             </article>
@@ -129,7 +133,10 @@ function Features() {
 
           <div className="grid gap-4">
             <div className="rounded-[1.5rem] border border-red-300/20 bg-red-500/[0.06] p-6">
-              <p className="text-sm uppercase tracking-[0.18em] text-red-200/60">Problem</p>
+              <div className="flex items-center gap-2 text-red-200/60">
+                <CircleAlert className="h-5 w-5" aria-hidden="true" />
+                <p className="text-sm uppercase tracking-[0.18em]">Problem</p>
+              </div>
               <h3 className="mt-4 text-2xl font-medium tracking-tight">Preparation is unrealistic, expensive, hard to scale, and inconsistent.</h3>
               <p className="mt-4 leading-relaxed text-white/55">
                 Students and job seekers need realistic interview pressure, while institutions need scalable and consistent feedback.
@@ -137,7 +144,10 @@ function Features() {
             </div>
 
             <div className="rounded-[1.5rem] border border-emerald-300/20 bg-emerald-500/[0.06] p-6">
-              <p className="text-sm uppercase tracking-[0.18em] text-emerald-200/60">Solution</p>
+              <div className="flex items-center gap-2 text-emerald-200/60">
+                <CircleCheck className="h-5 w-5" aria-hidden="true" />
+                <p className="text-sm uppercase tracking-[0.18em]">Solution</p>
+              </div>
               <h3 className="mt-4 text-2xl font-medium tracking-tight">HRVERSE provides realistic AI/VR practice with structured reports.</h3>
               <p className="mt-4 leading-relaxed text-white/55">
                 Users practice naturally, receive objective feedback, and institutions can track performance through automated reports.
@@ -165,16 +175,22 @@ function Segments() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-          {segments.map(([tag, title, text, tagClass]) => (
+          {segments.map(([tag, Icon, title, text, tagClass]) => (
             <article key={title} className="rounded-[1rem] border border-black/10 p-4 sm:rounded-[1.5rem] sm:p-6">
-              <span className={`rounded-full px-2.5 py-1 text-xs sm:px-3 sm:text-sm ${tagClass}`}>{tag}</span>
+              <div className="flex items-center justify-between gap-2">
+                <span className={`rounded-full px-2.5 py-1 text-xs sm:px-3 sm:text-sm ${tagClass}`}>{tag}</span>
+                <Icon className="h-5 w-5 text-ink/40 sm:h-6 sm:w-6" aria-hidden="true" />
+              </div>
               <h3 className="mt-6 text-base font-medium tracking-tight sm:mt-10 sm:text-2xl">{title}</h3>
               <p className="mt-3 text-xs leading-relaxed text-ink/60 sm:mt-4 sm:text-base">{text}</p>
             </article>
           ))}
 
           <article className="rounded-[1rem] border border-black/10 bg-ink p-4 text-white sm:rounded-[1.5rem] sm:p-6">
-            <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-white/60 sm:px-3 sm:text-sm">Enterprise</span>
+            <div className="flex items-center justify-between gap-2">
+              <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-white/60 sm:px-3 sm:text-sm">Enterprise</span>
+              <BriefcaseBusiness className="h-5 w-5 text-white/45 sm:h-6 sm:w-6" aria-hidden="true" />
+            </div>
             <h3 className="mt-6 text-base font-medium tracking-tight sm:mt-10 sm:text-2xl">Employers & HR teams</h3>
             <p className="mt-3 text-xs leading-relaxed text-white/55 sm:mt-4 sm:text-base">
               Recruiters and HR departments improving candidate screening and workplace-readiness preparation.
@@ -198,9 +214,12 @@ function Lifecycle() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          {lifecycle.map(([label, title]) => (
+          {lifecycle.map(([label, Icon, title]) => (
             <div key={title} className="rounded-[1rem] border border-black/10 bg-white p-4 sm:rounded-[1.5rem] sm:p-6">
-              <p className="text-xs text-ink/45 sm:text-sm">{label}</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs text-ink/45 sm:text-sm">{label}</p>
+                <Icon className="h-5 w-5 text-brandBlue sm:h-6 sm:w-6" aria-hidden="true" />
+              </div>
               <h3 className="mt-4 text-base font-medium sm:mt-8 sm:text-xl">{title}</h3>
             </div>
           ))}
