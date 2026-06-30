@@ -8,9 +8,9 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(2.75rem, 8vw, 7.5rem);
-  line-height: 0.92;
-  letter-spacing: -0.07em;
+  font-size: clamp(1.9rem, 4.6vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 .section-title {

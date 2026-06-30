@@ -75,7 +75,7 @@ function Hero() {
 
           <div className="space-y-6">
             <h1 className="hero-title font-medium">Practice interviews before they matter.</h1>
-            <p className="max-w-2xl text-[clamp(1.05rem,2vw,1.45rem)] leading-relaxed text-white/62">
+            <p className="max-w-2xl text-[clamp(0.85rem,1.05vw,1rem)] leading-relaxed text-white/62">
               HRVERSE is an AI-powered employability and workforce-readiness ecosystem for VR interview practice,
               adaptive voice simulation, instant feedback, and future workplace-pressure training.
             </p>
