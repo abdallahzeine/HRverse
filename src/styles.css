@@ -1,0 +1,82 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b0f14;
+}
+
+.hero-title {
+  font-size: clamp(2.75rem, 8vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.soft-glow {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(54, 119, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 90% 40%, rgba(22, 184, 166, 0.16), transparent 28%),
+    #0b0f14;
+}
+
+.logo-mark {
+  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+}
+
+.three-room-shell {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  filter: drop-shadow(0 2rem 3rem rgba(0, 0, 0, 0.32));
+}
+
+.three-room-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(11, 15, 20, 0.72);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.875rem;
+  transition: opacity 180ms ease;
+}
+
+.three-room-loader__spinner {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #fff;
+  border-radius: 999px;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.three-room {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  cursor: grab;
+}
+
+.three-room:active {
+  cursor: grabbing;
+}
+
+.three-room canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: transparent !important;
+}

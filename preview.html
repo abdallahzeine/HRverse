@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRVERSE — AI Career Readiness Platform</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0b0f14",
+              panel: "#11161d",
+              panelSoft: "#171d25",
+              line: "rgba(255,255,255,0.12)",
+              muted: "#9aa4b2",
+              brandBlue: "#3677ff",
+              brandTeal: "#16b8a6",
+              brandOrange: "#ff6b35"
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
