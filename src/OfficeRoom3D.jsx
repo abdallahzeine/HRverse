@@ -53,6 +53,7 @@ export default function OfficeRoom3D() {
     mount.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enabled = false;
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = -0.35;
@@ -264,8 +265,12 @@ export default function OfficeRoom3D() {
     const resize = () => {
       const width = mount.clientWidth || 1;
       const height = mount.clientHeight || 1;
+      const isMobile = width < 640;
       camera.aspect = width / height;
+      camera.fov = isMobile ? 58 : 38;
+      camera.position.set(...(isMobile ? [11.5, 6.6, -14] : [6.85, 4.47, -7.95]));
       camera.updateProjectionMatrix();
+      controls.update();
       renderer.setSize(width, height, false);
     };
 

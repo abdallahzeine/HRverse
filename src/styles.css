@@ -8,9 +8,9 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(1.9rem, 4.6vw, 4.25rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.6rem, 3.7vw, 3.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
 }
 
 .section-title {
@@ -67,11 +67,7 @@ body {
   height: 100%;
   min-height: 100%;
   width: 100%;
-  cursor: grab;
-}
-
-.three-room:active {
-  cursor: grabbing;
+  pointer-events: none;
 }
 
 .three-room canvas {

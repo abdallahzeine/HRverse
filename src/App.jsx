@@ -33,7 +33,7 @@ const lifecycle = [
 function Header() {
   return (
     <header className="sticky top-0 z-50 h-16 border-b border-line bg-ink/80 backdrop-blur-xl">
-      <nav className="mx-auto flex h-full w-[92%] max-w-7xl items-center justify-between">
+      <nav className="mx-auto flex h-full w-[92%] max-w-7xl items-center justify-center md:justify-between">
         <a href="#" className="flex items-center gap-3">
           <span className="text-lg font-semibold tracking-tight">
             HR<span className="bg-gradient-to-r from-brandBlue to-brandTeal bg-clip-text text-transparent">VERSE</span>
@@ -47,9 +47,6 @@ function Header() {
           <a href="#demo" className="hover:text-white">3D Room</a>
         </div>
 
-        <a href="#demo" className="rounded-full bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-white/85">
-          View preview
-        </a>
       </nav>
     </header>
   );
@@ -64,24 +61,24 @@ function Hero() {
         </Suspense>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[82%] bg-gradient-to-r from-ink via-ink/80 to-transparent lg:w-[58%]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[52%] bg-gradient-to-t from-ink via-ink/70 to-transparent" />
 
-      <div className="pointer-events-none relative z-10 mx-auto grid h-full w-[92%] items-center gap-8 py-8 lg:grid-cols-[0.75fr_1.25fr] lg:py-10">
+      <div className="pointer-events-none relative z-10 mx-auto grid h-full w-[92%] content-end items-end gap-8 pb-10 pt-8 lg:grid-cols-[0.75fr_1.25fr] lg:pb-14 lg:pt-10">
         <div className="flex max-w-2xl flex-col gap-8">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-white/5 px-4 py-2 text-sm text-white/70">
+          <div className="hidden w-fit items-center gap-2 rounded-full border border-line bg-white/5 px-4 py-2 text-sm text-white/70 sm:inline-flex">
             <span className="aspect-square w-2 rounded-full bg-brandOrange" />
             Coming soon — preview only
           </div>
 
           <div className="space-y-6">
             <h1 className="hero-title font-medium">Practice interviews before they matter.</h1>
-            <p className="max-w-2xl text-[clamp(0.85rem,1.05vw,1rem)] leading-relaxed text-white/62">
+            <p className="max-w-2xl text-[clamp(0.78rem,0.9vw,0.9rem)] leading-relaxed text-white/62">
               HRVERSE is an AI-powered employability and workforce-readiness ecosystem for VR interview practice,
               adaptive voice simulation, instant feedback, and future workplace-pressure training.
             </p>
           </div>
 
-          <div className="pointer-events-auto flex flex-col gap-3 sm:flex-row">
+          <div className="pointer-events-auto hidden gap-3 sm:flex sm:flex-row">
             <a href="#demo" className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:bg-white/85">
               Explore 3D room
             </a>
@@ -91,7 +88,7 @@ function Hero() {
           </div>
         </div>
 
-        <div aria-hidden="true" />
+        <div className="hidden lg:block" aria-hidden="true" />
       </div>
     </section>
   );
@@ -106,12 +103,12 @@ function Product() {
           <h2 className="section-title font-medium">One platform from pathway choice to workforce readiness.</h2>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {productCards.map(([num, title, text, color]) => (
-            <article key={num} className="rounded-[1.5rem] border border-black/10 bg-white p-6">
-              <p className={`mb-10 text-sm ${color}`}>{num}</p>
-              <h3 className="text-2xl font-medium tracking-tight">{title}</h3>
-              <p className="mt-4 leading-relaxed text-ink/60">{text}</p>
+            <article key={num} className="rounded-[1rem] border border-black/10 bg-white p-4 sm:rounded-[1.5rem] sm:p-6">
+              <p className={`mb-4 text-xs sm:mb-10 sm:text-sm ${color}`}>{num}</p>
+              <h3 className="text-base font-medium tracking-tight sm:text-2xl">{title}</h3>
+              <p className="mt-3 text-xs leading-relaxed text-ink/60 sm:mt-4 sm:text-base">{text}</p>
             </article>
           ))}
         </div>
@@ -167,19 +164,19 @@ function Segments() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
           {segments.map(([tag, title, text, tagClass]) => (
-            <article key={title} className="rounded-[1.5rem] border border-black/10 p-6">
-              <span className={`rounded-full px-3 py-1 text-sm ${tagClass}`}>{tag}</span>
-              <h3 className="mt-10 text-2xl font-medium tracking-tight">{title}</h3>
-              <p className="mt-4 leading-relaxed text-ink/60">{text}</p>
+            <article key={title} className="rounded-[1rem] border border-black/10 p-4 sm:rounded-[1.5rem] sm:p-6">
+              <span className={`rounded-full px-2.5 py-1 text-xs sm:px-3 sm:text-sm ${tagClass}`}>{tag}</span>
+              <h3 className="mt-6 text-base font-medium tracking-tight sm:mt-10 sm:text-2xl">{title}</h3>
+              <p className="mt-3 text-xs leading-relaxed text-ink/60 sm:mt-4 sm:text-base">{text}</p>
             </article>
           ))}
 
-          <article className="rounded-[1.5rem] border border-black/10 bg-ink p-6 text-white">
-            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/60">Enterprise</span>
-            <h3 className="mt-10 text-2xl font-medium tracking-tight">Employers & HR teams</h3>
-            <p className="mt-4 leading-relaxed text-white/55">
+          <article className="rounded-[1rem] border border-black/10 bg-ink p-4 text-white sm:rounded-[1.5rem] sm:p-6">
+            <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-white/60 sm:px-3 sm:text-sm">Enterprise</span>
+            <h3 className="mt-6 text-base font-medium tracking-tight sm:mt-10 sm:text-2xl">Employers & HR teams</h3>
+            <p className="mt-3 text-xs leading-relaxed text-white/55 sm:mt-4 sm:text-base">
               Recruiters and HR departments improving candidate screening and workplace-readiness preparation.
             </p>
           </article>
@@ -200,11 +197,11 @@ function Lifecycle() {
           </h2>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {lifecycle.map(([label, title]) => (
-            <div key={title} className="rounded-[1.5rem] border border-black/10 bg-white p-6">
-              <p className="text-sm text-ink/45">{label}</p>
-              <h3 className="mt-8 text-xl font-medium">{title}</h3>
+            <div key={title} className="rounded-[1rem] border border-black/10 bg-white p-4 sm:rounded-[1.5rem] sm:p-6">
+              <p className="text-xs text-ink/45 sm:text-sm">{label}</p>
+              <h3 className="mt-4 text-base font-medium sm:mt-8 sm:text-xl">{title}</h3>
             </div>
           ))}
         </div>
