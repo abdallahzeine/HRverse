@@ -67,7 +67,18 @@ body {
   height: 100%;
   min-height: 100%;
   width: 100%;
-  pointer-events: none;
+  cursor: grab;
+}
+
+.three-room:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 639px) {
+  .three-room {
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 .three-room canvas {

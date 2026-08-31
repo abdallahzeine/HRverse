@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRVERSE — Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <style type="text/tailwindcss">
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-size: min(1.25vw, 2.2222vh);
+}
+body {
+  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #212121;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.875rem 3.5rem 1.75rem;
+  background: #fff;
+  border-top: 0.0625rem solid #d9d9dd;
+}
+.kicker {
+  font-family: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #75758a;
+}
+.display {
+  font-family: CohereText, "Space Grotesk", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .95;
+}
+.h1 { font-size: 5.25rem; }
+.h2 { font-size: 3rem; letter-spacing: -0.02em; line-height: 1.05; }
+.h3 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.12; }
+.lead { font-size: 1.25rem; line-height: 1.38; color: #212121; }
+.copy { font-size: 0.9375rem; line-height: 1.42; color: #616161; }
+.micro { font-size: 0.6875rem; line-height: 1.35; color: #75758a; }
+.gradient-text {
+  background: linear-gradient(92deg, #1863dc 0%, #4c6ee6 38%, #13a083 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  background: #fff;
+  border: 0.0625rem solid #e5e7eb;
+  border-radius: 1.375rem;
+}
+.card-sm { border-radius: 0.875rem; }
+.soft { background: #eeece7; }
+.dark { background: radial-gradient(circle at 80% 10%, rgba(24,99,220,.24), transparent 34%), #003c33; color: #fff; }
+.navy { background: #071829; color: #fff; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 0.0625rem solid #d9d9dd;
+  border-radius: 9999rem;
+  padding: 0.4375rem 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: #fff;
+}
+.blue-pill { color: #1863dc; border-color: rgba(24, 99, 220, .28); background: #f1f5ff; }
+.coral-pill { color: #b64a32; border-color: rgba(255,119,89,.42); background: rgba(255,119,89,.10); }
+.green-pill { color: #003c33; border-color: rgba(0,60,51,.25); background: #edfce9; }
+.dark-pill { color: #fff; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.1); }
+ul.clean { list-style: disc; margin: 0; padding-left: 1.05em; }
+ul.clean li { padding-left: 0.25em; margin: 0 0 0.4375rem; }
+ul.clean li::marker { color: #1863dc; }
+.topline { border-top: 0.3125rem solid #1863dc; }
+.topline.green { border-top-color: #003c33; }
+.topline.coral { border-top-color: #ff7759; }
+.block-title { font-size: 0.9375rem; font-weight: 500; margin: 0 0 0.5rem; color: #17171c; }
+.block-text { font-size: 0.6875rem; line-height: 1.25; color: #616161; }
+.block-text li { margin-bottom: 0.1875rem; }
+.page-num { margin-top: auto; align-self: flex-end; font-family: CohereMono, Arial, sans-serif; font-size: 0.6875rem; color: #93939f; }
+.icon-inline { margin-right: 0.5rem; color: #1863dc; font-size: 0.9em; }
+.icon-heading { margin-right: 0.55rem; color: currentColor; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="grid grid-cols-[1.08fr_.92fr] gap-10 h-full items-center">
+    <div class="pb-8">
+      <div class="kicker mb-5"><i class="fa-solid fa-vr-cardboard icon-inline" aria-hidden="true"></i>Spatial Intelligence & Career Architecture</div>
+      <h1 class="display h1 mb-5">HR<span class="gradient-text">VERSE</span></h1>
+      <h2 class="h3 mb-5 max-w-[40.625rem]">AI-Powered Employability & Workforce-Readiness Ecosystem</h2>
+      <p class="lead max-w-[42.1875rem] mb-7">Immersive career readiness from school pathway guidance to VR interview practice, instant feedback, and future workplace-pressure simulation.</p>
+      <div class="card card-sm p-5 max-w-[40.625rem] mb-8">
+        <div class="kicker mb-2">Roadmap</div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-[#f1f5ff] border border-[#d9d9dd] p-4"><b>Phase 1</b><br><span class="copy">VR interview simulation</span></div>
+          <div class="rounded-xl bg-[#edfce9] border border-[#d9d9dd] p-4"><b>Phase 2</b><br><span class="copy">Workplace-pressure simulation</span></div>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <span class="pill blue-pill">Employability</span>
+        <span class="pill green-pill">Voice AI</span>
+        <span class="pill">Career Readiness</span>
+        <span class="pill coral-pill">Workplace Simulation</span>
+      </div>
+    </div>
+
+    <div class="h-full rounded-[1.875rem] bg-[#071829] p-6 text-white overflow-hidden flex flex-col gap-5">
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="kicker text-[#b8c3d3]">Live Simulation</div>
+          <div class="text-2xl tracking-[-.02em]">VR Interview Room</div>
+        </div>
+        <span class="pill dark-pill"><i class="fa-solid fa-robot" aria-hidden="true"></i>AI online</span>
+      </div>
+      <div class="rounded-[1.375rem] bg-white/8 border border-white/15 p-6 flex-1 grid grid-rows-[auto_1fr_auto] gap-5">
+        <div class="flex items-center justify-between">
+          <span class="pill dark-pill"><i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i>VR scenario</span>
+          <span class="pill dark-pill"><i class="fa-solid fa-comments" aria-hidden="true"></i>Interview mode</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 items-center">
+          <div class="rounded-2xl bg-[#0b2338] border border-white/10 p-5 h-full flex flex-col justify-center">
+            <div class="micro text-[#b8c3d3] mb-2">AI interviewer</div>
+            <div class="text-xl leading-tight">Adaptive follow-up questions</div>
+          </div>
+          <div class="rounded-2xl bg-white/10 border border-white/10 p-5 h-full flex flex-col justify-center">
+            <div class="micro text-[#b8c3d3] mb-2">Candidate</div>
+            <div class="text-xl leading-tight">Natural spoken response</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="rounded-xl bg-white/10 border border-white/10 p-3"><div class="micro text-[#b8c3d3]">Confidence</div><div>82%</div></div>
+          <div class="rounded-xl bg-white/10 border border-white/10 p-3"><div class="micro text-[#b8c3d3]">Clarity</div><div>High</div></div>
+          <div class="rounded-xl bg-white/10 border border-white/10 p-3"><div class="micro text-[#b8c3d3]">Readiness</div><div>Improving</div></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-white p-4 text-[#212121]">
+          <div class="micro mb-1">Question</div>
+          <div class="font-medium leading-tight">Tell me about a challenge you solved.</div>
+        </div>
+        <div class="rounded-2xl bg-[#17171c] border border-white/10 p-4">
+          <div class="micro text-[#b8c3d3] mb-3"><i class="fa-solid fa-microphone-lines icon-heading" aria-hidden="true"></i>Voice confidence</div>
+          <div class="flex items-end gap-1 h-12">
+            <span class="w-3 h-5 bg-[#4c6ee6] rounded-full"></span><span class="w-3 h-9 bg-[#4c6ee6] rounded-full"></span><span class="w-3 h-7 bg-[#13a083] rounded-full"></span><span class="w-3 h-12 bg-[#13a083] rounded-full"></span><span class="w-3 h-6 bg-[#ff7759] rounded-full"></span><span class="w-3 h-10 bg-[#13a083] rounded-full"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">01 / 08</div>
+</section>
+</body>
+</html>

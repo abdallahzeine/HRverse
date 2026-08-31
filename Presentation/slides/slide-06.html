@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRVERSE — Gap & Answer</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <style type="text/tailwindcss">
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-size: min(1.25vw, 2.2222vh);
+}
+body {
+  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #212121;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.875rem 3.5rem 1.75rem;
+  background: #fff;
+  border-top: 0.0625rem solid #d9d9dd;
+}
+.kicker {
+  font-family: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #75758a;
+}
+.display {
+  font-family: CohereText, "Space Grotesk", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .95;
+}
+.h1 { font-size: 5.25rem; }
+.h2 { font-size: 3rem; letter-spacing: -0.02em; line-height: 1.05; }
+.h3 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.12; }
+.lead { font-size: 1.25rem; line-height: 1.38; color: #212121; }
+.copy { font-size: 0.9375rem; line-height: 1.42; color: #616161; }
+.micro { font-size: 0.6875rem; line-height: 1.35; color: #75758a; }
+.gradient-text {
+  background: linear-gradient(92deg, #1863dc 0%, #4c6ee6 38%, #13a083 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  background: #fff;
+  border: 0.0625rem solid #e5e7eb;
+  border-radius: 1.375rem;
+}
+.card-sm { border-radius: 0.875rem; }
+.soft { background: #eeece7; }
+.dark { background: radial-gradient(circle at 80% 10%, rgba(24,99,220,.24), transparent 34%), #003c33; color: #fff; }
+.navy { background: #071829; color: #fff; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 0.0625rem solid #d9d9dd;
+  border-radius: 9999rem;
+  padding: 0.4375rem 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: #fff;
+}
+.blue-pill { color: #1863dc; border-color: rgba(24, 99, 220, .28); background: #f1f5ff; }
+.coral-pill { color: #b64a32; border-color: rgba(255,119,89,.42); background: rgba(255,119,89,.10); }
+.green-pill { color: #003c33; border-color: rgba(0,60,51,.25); background: #edfce9; }
+.dark-pill { color: #fff; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.1); }
+ul.clean { list-style: disc; margin: 0; padding-left: 1.05em; }
+ul.clean li { padding-left: 0.25em; margin: 0 0 0.4375rem; }
+ul.clean li::marker { color: #1863dc; }
+.topline { border-top: 0.3125rem solid #1863dc; }
+.topline.green { border-top-color: #003c33; }
+.topline.coral { border-top-color: #ff7759; }
+.block-title { font-size: 0.9375rem; font-weight: 500; margin: 0 0 0.5rem; color: #17171c; }
+.block-text { font-size: 0.6875rem; line-height: 1.25; color: #616161; }
+.block-text li { margin-bottom: 0.1875rem; }
+.page-num { margin-top: auto; align-self: flex-end; font-family: CohereMono, Arial, sans-serif; font-size: 0.6875rem; color: #93939f; }
+.icon-inline { margin-right: 0.5rem; color: #1863dc; font-size: 0.9em; }
+.icon-heading { margin-right: 0.55rem; color: currentColor; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="mb-7">
+    <div class="kicker mb-2"><i class="fa-solid fa-circle-half-stroke icon-inline" aria-hidden="true"></i>Problem / Solution</div>
+    <h1 class="display h2">The Gap & Our Answer</h1>
+  </div>
+
+  <div class="grid grid-cols-[1fr_4.375rem_1fr] gap-5 flex-1 min-h-0 items-stretch">
+    <div class="card p-7" style="background:#fff7f4; border-color:#ffad9b;">
+      <div class="kicker text-[#b64a32] mb-2"><i class="fa-solid fa-triangle-exclamation icon-heading" aria-hidden="true"></i>Problem</div>
+      <h2 class="h3 mb-6">Current preparation is unrealistic, expensive, hard to scale, and inconsistent.</h2>
+      <ul class="clean text-[1rem] leading-[1.42] text-[#212121]"><li>Students and job seekers lack realistic interview pressure.</li><li>Professional coaching is expensive and difficult to scale.</li><li>Traditional mock interviews produce inconsistent feedback.</li><li>Employers spend major time screening baseline candidates.</li><li>Interview performance does not always predict job readiness.</li><li>9th–10th grade students choose streams or majors without pathway guidance.</li></ul>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <div class="kicker text-center">maps<br>to</div>
+    </div>
+
+    <div class="card p-7" style="background:#edfce9; border-color:#bdebc3;">
+      <div class="kicker text-[#003c33] mb-2"><i class="fa-solid fa-circle-check icon-heading" aria-hidden="true"></i>Solution</div>
+      <h2 class="h3 mb-6">HRVERSE turns practice into measured simulation.</h2>
+      <ul class="clean text-[1rem] leading-[1.42] text-[#212121]"><li>Realistic VR interview scenarios create controlled pressure.</li><li>Users speak naturally with an adaptive voice-to-voice AI interviewer.</li><li>Feedback covers answer quality, speech delivery, confidence, communication, hiring readiness, and overall performance.</li><li>Scalable AI/VR simulation reduces dependence on manual coaching.</li><li>Institutions receive automated feedback and structured reports.</li><li>RIASEC supports early academic and career pathway guidance.</li></ul>
+    </div>
+  </div>
+  <div class="page-num">06 / 08</div>
+</section>
+</body>
+</html>

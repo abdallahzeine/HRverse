@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRVERSE — Business Model Canvas</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <style type="text/tailwindcss">
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-size: min(1.25vw, 2.2222vh);
+}
+body {
+  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #212121;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.875rem 3.5rem 1.75rem;
+  background: #fff;
+  border-top: 0.0625rem solid #d9d9dd;
+}
+.kicker {
+  font-family: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #75758a;
+}
+.display {
+  font-family: CohereText, "Space Grotesk", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .95;
+}
+.h1 { font-size: 5.25rem; }
+.h2 { font-size: 3rem; letter-spacing: -0.02em; line-height: 1.05; }
+.h3 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.12; }
+.lead { font-size: 1.25rem; line-height: 1.38; color: #212121; }
+.copy { font-size: 0.9375rem; line-height: 1.42; color: #616161; }
+.micro { font-size: 0.6875rem; line-height: 1.35; color: #75758a; }
+.gradient-text {
+  background: linear-gradient(92deg, #1863dc 0%, #4c6ee6 38%, #13a083 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  background: #fff;
+  border: 0.0625rem solid #e5e7eb;
+  border-radius: 1.375rem;
+}
+.card-sm { border-radius: 0.875rem; }
+.soft { background: #eeece7; }
+.dark { background: radial-gradient(circle at 80% 10%, rgba(24,99,220,.24), transparent 34%), #003c33; color: #fff; }
+.navy { background: #071829; color: #fff; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 0.0625rem solid #d9d9dd;
+  border-radius: 9999rem;
+  padding: 0.4375rem 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: #fff;
+}
+.blue-pill { color: #1863dc; border-color: rgba(24, 99, 220, .28); background: #f1f5ff; }
+.coral-pill { color: #b64a32; border-color: rgba(255,119,89,.42); background: rgba(255,119,89,.10); }
+.green-pill { color: #003c33; border-color: rgba(0,60,51,.25); background: #edfce9; }
+.dark-pill { color: #fff; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.1); }
+ul.clean { list-style: disc; margin: 0; padding-left: 1.05em; }
+ul.clean li { padding-left: 0.25em; margin: 0 0 0.4375rem; }
+ul.clean li::marker { color: #1863dc; }
+.topline { border-top: 0.3125rem solid #1863dc; }
+.topline.green { border-top-color: #003c33; }
+.topline.coral { border-top-color: #ff7759; }
+.block-title { font-size: 0.9375rem; font-weight: 500; margin: 0 0 0.5rem; color: #17171c; }
+.block-text { font-size: 0.6875rem; line-height: 1.25; color: #616161; }
+.block-text li { margin-bottom: 0.1875rem; }
+.page-num { margin-top: auto; align-self: flex-end; font-family: CohereMono, Arial, sans-serif; font-size: 0.6875rem; color: #93939f; }
+.icon-inline { margin-right: 0.5rem; color: #1863dc; font-size: 0.9em; }
+.icon-heading { margin-right: 0.55rem; color: currentColor; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="flex justify-between items-end mb-5">
+    <div>
+      <div class="kicker mb-2"><i class="fa-solid fa-table icon-inline" aria-hidden="true"></i>Business Model</div>
+      <h1 class="display h2">The Business Model Canvas</h1>
+    </div>
+    <p class="copy max-w-[26.875rem] text-right">An immersive career-readiness ecosystem: pathway guidance, interview practice, feedback, and workforce simulation.</p>
+  </div>
+
+  <div class="grid gap-[0.625rem] flex-1 min-h-0" style="grid-template-columns:1.08fr 1fr 1.32fr 1fr 1.08fr; grid-template-rows:1fr 1fr .68fr;">
+    <div class="card card-sm p-4" style="grid-row:span 2;">
+      <h3 class="block-title">Key Partners</h3>
+      <ul class="block-text clean"><li>Universities, colleges</li><li>Training centers, bootcamps</li><li>Employers, HR teams</li><li>VR hardware providers</li><li>AI/cloud providers</li><li>K-12 school networks</li><li>Career coaches</li></ul>
+    </div>
+    <div class="card card-sm p-4 topline">
+      <h3 class="block-title">Key Activities</h3>
+      <ul class="block-text clean"><li>VR platform development</li><li>AI interviewer training</li><li>Voice analysis</li><li>Scoring systems</li><li>User testing</li><li>RIASEC calibration</li></ul>
+    </div>
+    <div class="card card-sm p-5 topline" style="grid-row:span 2; background:#f1f5ff; border-color:#cfdcff;">
+      <div class="kicker text-[#1863dc] mb-2"><i class="fa-solid fa-gem icon-heading" aria-hidden="true"></i>Center of the model</div>
+      <h3 class="text-[1.5rem] leading-[1.05] tracking-[-.02em] mb-3">Value Propositions</h3>
+      <ul class="clean text-[0.8125rem] leading-snug text-[#212121]"><li>Realistic VR interview practice</li><li>AI-powered voice-to-voice simulation</li><li>Instant objective performance feedback</li><li>Reduced anxiety through unlimited practice</li><li>Automated institutional reports</li><li>Scalable alternative to manual coaching</li><li>Phase 2 workplace-pressure simulation</li><li>RIASEC early pathway guidance</li></ul>
+    </div>
+    <div class="card card-sm p-4 topline green">
+      <h3 class="block-title">Relationships</h3>
+      <ul class="block-text clean"><li>Self-service access</li><li>Technical support</li><li>Free trials</li><li>Institutional accounts</li><li>Performance reports</li><li>Parent reports</li></ul>
+    </div>
+    <div class="card card-sm p-4" style="grid-row:span 2;">
+      <h3 class="block-title">Customers</h3>
+      <ul class="block-text clean"><li>9th–10th pathfinders</li><li>University students</li><li>Fresh graduates</li><li>Job seekers</li><li>Career changers</li><li>Training centers, bootcamps</li><li>Recruiters, HR teams</li></ul>
+    </div>
+    <div class="card card-sm p-4 topline green">
+      <h3 class="block-title">Key Resources</h3>
+      <ul class="block-text clean"><li>VR application</li><li>AI interview engine</li><li>Voice analysis tech</li><li>Question database</li><li>Scoring system</li><li>RIASEC algorithm</li><li>Development team</li></ul>
+    </div>
+    <div class="card card-sm p-4 topline">
+      <h3 class="block-title">Channels</h3>
+      <ul class="block-text clean"><li>Direct institutional sales</li><li>Career services</li><li>Bootcamp partnerships</li><li>Digital campaigns</li><li>Website and app</li><li>K-12 network integration</li></ul>
+    </div>
+    <div class="card card-sm p-4" style="grid-column:span 3; background:#eeece7;">
+      <h3 class="block-title"><i class="fa-solid fa-coins icon-heading" aria-hidden="true"></i>Cost Structure</h3>
+      <p class="block-text">VR development, AI/API usage, cloud hosting, voice processing, testing, marketing, support, automated feedback, and RIASEC reports.</p>
+    </div>
+    <div class="card card-sm p-4" style="grid-column:span 2; background:#fff3ef; border-color:#ffad9b;">
+      <h3 class="block-title text-[#b64a32]"><i class="fa-solid fa-chart-line icon-heading" aria-hidden="true"></i>Revenue Streams</h3>
+      <p class="block-text text-[#212121]">University subscriptions, school licenses, individual plans, interview-prep packages, employer screening, parent pathway reports, premium workplace-simulation packages.</p>
+    </div>
+  </div>
+  <div class="page-num">02 / 08</div>
+</section>
+</body>
+</html>

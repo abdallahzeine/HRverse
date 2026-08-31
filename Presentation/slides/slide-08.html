@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRVERSE — Investment & Ambition</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <style type="text/tailwindcss">
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-size: min(1.25vw, 2.2222vh);
+}
+body {
+  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #212121;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.875rem 3.5rem 1.75rem;
+  background: #fff;
+  border-top: 0.0625rem solid #d9d9dd;
+}
+.kicker {
+  font-family: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #75758a;
+}
+.display {
+  font-family: CohereText, "Space Grotesk", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .95;
+}
+.h1 { font-size: 5.25rem; }
+.h2 { font-size: 3rem; letter-spacing: -0.02em; line-height: 1.05; }
+.h3 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.12; }
+.lead { font-size: 1.25rem; line-height: 1.38; color: #212121; }
+.copy { font-size: 0.9375rem; line-height: 1.42; color: #616161; }
+.micro { font-size: 0.6875rem; line-height: 1.35; color: #75758a; }
+.gradient-text {
+  background: linear-gradient(92deg, #1863dc 0%, #4c6ee6 38%, #13a083 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  background: #fff;
+  border: 0.0625rem solid #e5e7eb;
+  border-radius: 1.375rem;
+}
+.card-sm { border-radius: 0.875rem; }
+.soft { background: #eeece7; }
+.dark { background: radial-gradient(circle at 80% 10%, rgba(24,99,220,.24), transparent 34%), #003c33; color: #fff; }
+.navy { background: #071829; color: #fff; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 0.0625rem solid #d9d9dd;
+  border-radius: 9999rem;
+  padding: 0.4375rem 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: #fff;
+}
+.blue-pill { color: #1863dc; border-color: rgba(24, 99, 220, .28); background: #f1f5ff; }
+.coral-pill { color: #b64a32; border-color: rgba(255,119,89,.42); background: rgba(255,119,89,.10); }
+.green-pill { color: #003c33; border-color: rgba(0,60,51,.25); background: #edfce9; }
+.dark-pill { color: #fff; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.1); }
+ul.clean { list-style: disc; margin: 0; padding-left: 1.05em; }
+ul.clean li { padding-left: 0.25em; margin: 0 0 0.4375rem; }
+ul.clean li::marker { color: #1863dc; }
+.topline { border-top: 0.3125rem solid #1863dc; }
+.topline.green { border-top-color: #003c33; }
+.topline.coral { border-top-color: #ff7759; }
+.block-title { font-size: 0.9375rem; font-weight: 500; margin: 0 0 0.5rem; color: #17171c; }
+.block-text { font-size: 0.6875rem; line-height: 1.25; color: #616161; }
+.block-text li { margin-bottom: 0.1875rem; }
+.page-num { margin-top: auto; align-self: flex-end; font-family: CohereMono, Arial, sans-serif; font-size: 0.6875rem; color: #93939f; }
+.icon-inline { margin-right: 0.5rem; color: #1863dc; font-size: 0.9em; }
+.icon-heading { margin-right: 0.55rem; color: currentColor; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="mb-8">
+    <div class="kicker mb-2"><i class="fa-solid fa-coins icon-inline" aria-hidden="true"></i>Capital Plan</div>
+    <h1 class="display h2">Investment & Ambition</h1>
+  </div>
+
+  <div class="grid grid-cols-[.95fr_1.05fr] gap-6 flex-1 min-h-0">
+    <div class="card p-6 soft">
+      <div class="kicker mb-3"><i class="fa-solid fa-wallet icon-inline" aria-hidden="true"></i>Estimated Initial Capital Budget</div>
+      <div class="display text-[4.25rem] leading-[.9] tracking-[-.055em] mb-4"><span class="gradient-text">2,500</span><br><span class="text-[2.125rem] tracking-[-.02em]">JOD</span></div>
+      <div class="rounded-[1.375rem] bg-white border border-[#e5e7eb] p-4">
+        <h3 class="block-title">Budget Focus</h3>
+        <ul class="clean text-[0.8125rem] leading-[1.25] text-[#616161] grid grid-cols-2 gap-x-4"><li>VR prototype and application development.</li><li>AI interviewer integration and connectivity.</li><li>Voice analysis and scoring setup.</li><li>System testing, validation, and user feedback.</li><li>Cloud infrastructure and deployment.</li><li>Marketing and target user acquisition.</li><li>Holland RIASEC reporting module.</li></ul>
+      </div>
+    </div>
+
+    <div class="card dark p-7 overflow-hidden">
+      <div>
+        <div class="kicker text-white/60 mb-3"><i class="fa-solid fa-rocket icon-heading" aria-hidden="true"></i>Vision Statement</div>
+        <h2 class="display text-[2.5rem] leading-[1.02] tracking-[-.035em] text-white mb-5">A regional AI-powered employability and workforce-readiness platform.</h2>
+        <p class="text-[1.0625rem] leading-[1.34] text-white/82 mb-5">HRVERSE aims to become a regional AI-powered employability and workforce-readiness platform for career and workplace performance.</p>
+        <div class="rounded-[1.375rem] bg-white/8 border border-white/15 p-4">
+          <div class="kicker text-[#ffad9b] mb-2"><i class="fa-solid fa-compass icon-heading" aria-hidden="true"></i>Long-term Ambition</div>
+          <p class="text-[0.9375rem] leading-[1.34] text-white/88">One platform supporting users from Holland RIASEC pathway guidance to interview readiness and future workplace-pressure simulation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 rounded-full bg-[#17171c] text-white px-6 py-3 flex justify-between items-center">
+    <span class="kicker text-white/60"><i class="fa-solid fa-flag-checkered icon-heading" aria-hidden="true"></i>Final thesis</span>
+    <span class="text-[1.375rem] tracking-[-.02em]">From career exploration to workforce readiness.</span>
+  </div>
+  <div class="page-num">08 / 08</div>
+</section>
+</body>
+</html>

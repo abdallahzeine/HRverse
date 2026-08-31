@@ -53,7 +53,6 @@ export default function OfficeRoom3D() {
     mount.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enabled = false;
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = -0.35;
@@ -74,10 +73,11 @@ export default function OfficeRoom3D() {
       wood: new THREE.MeshStandardMaterial({ color: 0xc67331, roughness: 0.62 }),
       darkWood: new THREE.MeshStandardMaterial({ color: 0x74401e, roughness: 0.7 }),
       black: new THREE.MeshStandardMaterial({ color: 0x101114, roughness: 0.74 }),
+      key: new THREE.MeshStandardMaterial({ color: 0x2b3038, roughness: 0.58 }),
       metal: new THREE.MeshStandardMaterial({ color: 0xb8bcc2, metalness: 0.45, roughness: 0.35 }),
       board: new THREE.MeshStandardMaterial({ color: 0xf7fbf8, roughness: 0.5 }),
       blue: new THREE.MeshStandardMaterial({ color: 0x3677ff, roughness: 0.55 }),
-      screen: new THREE.MeshStandardMaterial({ color: 0x46baff, emissive: 0x1b68ff, emissiveIntensity: 0.55, roughness: 0.24 }),
+      screen: new THREE.MeshStandardMaterial({ color: 0x07182b, emissive: 0x0c4f8f, emissiveIntensity: 0.55, roughness: 0.24, side: THREE.DoubleSide }),
     };
 
     const room = new THREE.Group();
@@ -163,8 +163,35 @@ export default function OfficeRoom3D() {
     [[-1.48, 0.35, -0.12], [1.48, 0.35, -0.12], [-1.48, 0.35, 0.92], [1.48, 0.35, 0.92]].forEach((pos) => {
       box([0.18, 0.7, 0.18], pos, mats.darkWood);
     });
-    box([0.95, 0.055, 0.32], [0.03, 1.0, 0.84], mats.black, { rotation: [0, -0.12, 0] });
-    for (let i = 0; i < 8; i += 1) box([0.06, 0.014, 0.035], [-0.3 + i * 0.1, 1.04, 0.82], mats.metal);
+    const keyboard = new THREE.Group();
+    keyboard.position.set(0.03, 1.0, 0.84);
+    keyboard.rotation.y = -0.12;
+    room.add(keyboard);
+
+    const keyboardBase = new THREE.Mesh(new THREE.BoxGeometry(0.98, 0.055, 0.36), mats.black);
+    keyboardBase.castShadow = true;
+    keyboard.add(keyboardBase);
+
+    const keyGeometry = new THREE.BoxGeometry(0.055, 0.022, 0.052);
+    [[-0.12, 13], [-0.04, 13], [0.04, 12]].forEach(([z, count], row) => {
+      const rowOffset = row * 0.012;
+      for (let i = 0; i < count; i += 1) {
+        const key = new THREE.Mesh(keyGeometry, mats.key);
+        key.position.set((i - (count - 1) / 2) * 0.069 + rowOffset, 0.039, z);
+        key.castShadow = true;
+        keyboard.add(key);
+      }
+    });
+    [-0.4, -0.32, 0.34, 0.42].forEach((x) => {
+      const key = new THREE.Mesh(keyGeometry, mats.key);
+      key.position.set(x, 0.039, 0.12);
+      key.castShadow = true;
+      keyboard.add(key);
+    });
+    const spacebar = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.022, 0.052), mats.key);
+    spacebar.position.set(0.01, 0.039, 0.12);
+    spacebar.castShadow = true;
+    keyboard.add(spacebar);
 
     // Computer on desk side
     const monitor = new THREE.Group();
@@ -172,23 +199,70 @@ export default function OfficeRoom3D() {
     monitor.rotation.y = -0.28;
     room.add(monitor);
 
-    const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.72, 0.08), mats.black);
+    const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(1.16, 0.76, 0.09), mats.black);
     screenFrame.castShadow = true;
     monitor.add(screenFrame);
 
-    const screenFace = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.52), mats.screen);
-    screenFace.position.z = 0.045;
+    const screenFace = new THREE.Mesh(new THREE.PlaneGeometry(0.98, 0.58), mats.screen);
+    screenFace.position.z = 0.047;
     monitor.add(screenFace);
 
-    const screenLineMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.72 });
-    [[0, 0.13, 0.48], [0, 0, 0.62], [0, -0.13, 0.34]].forEach(([x, y, width]) => {
-      const line = new THREE.Mesh(new THREE.PlaneGeometry(width, 0.035), screenLineMat);
-      line.position.set(x, y, 0.048);
-      monitor.add(line);
+    const screenWhite = new THREE.MeshBasicMaterial({ color: 0xeaf7ff, transparent: true, opacity: 0.82, side: THREE.DoubleSide });
+    const screenBlue = new THREE.MeshBasicMaterial({ color: 0x42b7ff, side: THREE.DoubleSide });
+    const screenTeal = new THREE.MeshBasicMaterial({ color: 0x45e0c1, side: THREE.DoubleSide });
+    const screenPanel = new THREE.MeshBasicMaterial({ color: 0x102f4d, side: THREE.DoubleSide });
+    const addScreenElement = (size, position, material) => {
+      const element = new THREE.Mesh(new THREE.PlaneGeometry(...size), material);
+      element.position.set(...position);
+      monitor.add(element);
+    };
+    addScreenElement([0.98, 0.055], [0, 0.262, 0.049], screenPanel);
+    addScreenElement([0.14, 0.47], [-0.42, -0.002, 0.05], screenPanel);
+    addScreenElement([0.28, 0.17], [-0.19, 0.11, 0.051], screenBlue);
+    addScreenElement([0.28, 0.17], [0.14, 0.11, 0.051], screenTeal);
+    addScreenElement([0.28, 0.17], [-0.19, -0.12, 0.051], screenPanel);
+    addScreenElement([0.28, 0.17], [0.14, -0.12, 0.051], screenPanel);
+    [[-0.19, 0.13, 0.17], [0.14, 0.13, 0.15], [-0.19, -0.1, 0.18], [0.14, -0.1, 0.16]].forEach(([x, y, width]) => {
+      addScreenElement([width, 0.018], [x, y, 0.052], screenWhite);
+      addScreenElement([width * 0.65, 0.012], [x, y - 0.045, 0.052], screenWhite);
     });
-    cylinder(0.055, 0.36, [0.9, 1.12, 0.1], mats.black);
-    box([0.68, 0.07, 0.32], [0.9, 0.96, 0.1], mats.black);
-    sphere(0.11, [0.78, 1.02, 0.84], mats.black, [1.3, 0.45, 0.9]).rotation.y = Math.PI / 2;
+    [0.14, 0.04, -0.06].forEach((y, index) => {
+      addScreenElement([0.055, 0.018], [-0.42, y, 0.052], index === 0 ? screenTeal : screenWhite);
+    });
+
+    const webcam = new THREE.Mesh(new THREE.SphereGeometry(0.018, 12, 8), mats.metal);
+    webcam.position.set(0, 0.345, 0.052);
+    monitor.add(webcam);
+    const statusLight = new THREE.Mesh(new THREE.SphereGeometry(0.009, 10, 6), screenTeal);
+    statusLight.position.set(0.5, -0.33, 0.052);
+    monitor.add(statusLight);
+    const monitorStem = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.06, 0.36, 20), mats.metal);
+    monitorStem.position.set(0, -0.33, -0.015);
+    monitorStem.castShadow = true;
+    monitor.add(monitorStem);
+    const monitorBase = new THREE.Mesh(new THREE.BoxGeometry(0.68, 0.07, 0.32), mats.black);
+    monitorBase.position.set(0, -0.49, 0.02);
+    monitorBase.castShadow = true;
+    monitor.add(monitorBase);
+
+    const mouse = new THREE.Group();
+    mouse.position.set(0.76, 1.025, 0.84);
+    mouse.rotation.y = -0.12;
+    room.add(mouse);
+    const mouseShell = new THREE.Mesh(new THREE.SphereGeometry(0.12, 24, 16), mats.black);
+    mouseShell.scale.set(0.78, 0.38, 1.12);
+    mouseShell.castShadow = true;
+    mouse.add(mouseShell);
+    [-0.043, 0.043].forEach((x) => {
+      const button = new THREE.Mesh(new THREE.BoxGeometry(0.072, 0.012, 0.11), mats.key);
+      button.position.set(x, 0.047, -0.035);
+      button.castShadow = true;
+      mouse.add(button);
+    });
+    const mouseWheel = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.035, 12), mats.metal);
+    mouseWheel.position.set(0, 0.064, -0.025);
+    mouseWheel.rotation.z = Math.PI / 2;
+    mouse.add(mouseWheel);
 
     // Character GLB
     box([0.86, 0.12, 0.72], [0, 0.58, 1.58], mats.black);
@@ -269,6 +343,7 @@ export default function OfficeRoom3D() {
       camera.aspect = width / height;
       camera.fov = isMobile ? 58 : 38;
       camera.position.set(...(isMobile ? [11.5, 6.6, -14] : [6.85, 4.47, -7.95]));
+      controls.enabled = !isMobile;
       camera.updateProjectionMatrix();
       controls.update();
       renderer.setSize(width, height, false);

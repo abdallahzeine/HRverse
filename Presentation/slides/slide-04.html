@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRVERSE — Build & Deliver</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" />
+  <style type="text/tailwindcss">
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-size: min(1.25vw, 2.2222vh);
+}
+body {
+  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #212121;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2.875rem 3.5rem 1.75rem;
+  background: #fff;
+  border-top: 0.0625rem solid #d9d9dd;
+}
+.kicker {
+  font-family: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #75758a;
+}
+.display {
+  font-family: CohereText, "Space Grotesk", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .95;
+}
+.h1 { font-size: 5.25rem; }
+.h2 { font-size: 3rem; letter-spacing: -0.02em; line-height: 1.05; }
+.h3 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.12; }
+.lead { font-size: 1.25rem; line-height: 1.38; color: #212121; }
+.copy { font-size: 0.9375rem; line-height: 1.42; color: #616161; }
+.micro { font-size: 0.6875rem; line-height: 1.35; color: #75758a; }
+.gradient-text {
+  background: linear-gradient(92deg, #1863dc 0%, #4c6ee6 38%, #13a083 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  background: #fff;
+  border: 0.0625rem solid #e5e7eb;
+  border-radius: 1.375rem;
+}
+.card-sm { border-radius: 0.875rem; }
+.soft { background: #eeece7; }
+.dark { background: radial-gradient(circle at 80% 10%, rgba(24,99,220,.24), transparent 34%), #003c33; color: #fff; }
+.navy { background: #071829; color: #fff; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 0.0625rem solid #d9d9dd;
+  border-radius: 9999rem;
+  padding: 0.4375rem 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: #fff;
+}
+.blue-pill { color: #1863dc; border-color: rgba(24, 99, 220, .28); background: #f1f5ff; }
+.coral-pill { color: #b64a32; border-color: rgba(255,119,89,.42); background: rgba(255,119,89,.10); }
+.green-pill { color: #003c33; border-color: rgba(0,60,51,.25); background: #edfce9; }
+.dark-pill { color: #fff; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.1); }
+ul.clean { list-style: disc; margin: 0; padding-left: 1.05em; }
+ul.clean li { padding-left: 0.25em; margin: 0 0 0.4375rem; }
+ul.clean li::marker { color: #1863dc; }
+.topline { border-top: 0.3125rem solid #1863dc; }
+.topline.green { border-top-color: #003c33; }
+.topline.coral { border-top-color: #ff7759; }
+.block-title { font-size: 0.9375rem; font-weight: 500; margin: 0 0 0.5rem; color: #17171c; }
+.block-text { font-size: 0.6875rem; line-height: 1.25; color: #616161; }
+.block-text li { margin-bottom: 0.1875rem; }
+.page-num { margin-top: auto; align-self: flex-end; font-family: CohereMono, Arial, sans-serif; font-size: 0.6875rem; color: #93939f; }
+.icon-inline { margin-right: 0.5rem; color: #1863dc; font-size: 0.9em; }
+.icon-heading { margin-right: 0.55rem; color: currentColor; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="flex justify-between items-end mb-7">
+    <div>
+      <div class="kicker mb-2"><i class="fa-solid fa-gears icon-inline" aria-hidden="true"></i>Operating Model</div>
+      <h1 class="display h2">How We Build & Deliver Value</h1>
+    </div>
+    <p class="copy max-w-[24.375rem] text-right">Same order as the canvas: activities, resources, partners.</p>
+  </div>
+
+  <div class="grid grid-cols-3 gap-6 flex-1 min-h-0">
+    <div class="card topline p-6">
+      <h2 class="h3 mb-5"><i class="fa-solid fa-list-check icon-heading" aria-hidden="true"></i>Key Activities</h2>
+      <ul class="clean copy"><li>VR platform development and maintenance.</li><li>AI interviewer development, training, and improvement.</li><li>Voice analysis engineering and scoring system design.</li><li>User testing, validation, and performance upgrades.</li><li>Customer onboarding, support, and account management.</li><li>Sales pipeline and partnership development.</li><li>Holland RIASEC assessment calibration.</li></ul>
+    </div>
+
+    <div class="card topline green p-6">
+      <h2 class="h3 mb-5"><i class="fa-solid fa-cubes icon-heading" aria-hidden="true"></i>Key Resources</h2>
+      <ul class="clean copy"><li>VR application infrastructure and AI interview engine.</li><li>Voice/audio processing technology.</li><li>Interview question database.</li><li>Objective scoring and evaluation system.</li><li>Multidisciplinary development team.</li><li>Anonymized aggregate user performance data.</li><li>Calibrated Holland RIASEC mapping database.</li></ul>
+    </div>
+
+    <div class="card topline coral p-6">
+      <h2 class="h3 mb-5"><i class="fa-solid fa-handshake icon-heading" aria-hidden="true"></i>Key Partners</h2>
+      <ul class="clean copy"><li>Universities and regional colleges.</li><li>Technical training centers and bootcamps.</li><li>Employers and corporate HR departments.</li><li>VR hardware providers such as Meta Quest.</li><li>AI infrastructure and secure cloud providers.</li><li>Career coaching and mentorship organizations.</li><li>K-12 schools and private education networks.</li></ul>
+    </div>
+  </div>
+  <div class="page-num">04 / 08</div>
+</section>
+</body>
+</html>
